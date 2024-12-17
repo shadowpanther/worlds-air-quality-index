@@ -28,9 +28,9 @@ class WaqiDataRequester(object):
         _LOGGER.debug("Updating WAQI sensors")
         try:
             if self._method == CONF_LOCATION:
-                _dat = requests.get(f"https://api.waqi.info/feed/geo:{self._lat};{self._lng}/?token={self._token}").text
+                _dat = requests.get(f"https://api2.waqi.info/feed/geo:{self._lat};{self._lng}/?token={self._token}").text
             elif self._method == CONF_ID:
-                _dat = requests.get(f"https://api.waqi.info/feed/@{self._idx}/?token={self._token}").text
+                _dat = requests.get(f"https://api2.waqi.info/feed/@{self._idx}/?token={self._token}").text
             else:
                 _LOGGER.debug("No choosen method")
                 
